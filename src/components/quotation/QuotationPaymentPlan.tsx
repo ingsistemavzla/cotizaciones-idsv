@@ -70,20 +70,20 @@ export function QuotationPaymentPlan() {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
 
   return (
-    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-primary-800 sm:shadow-2xl relative overflow-hidden w-full">
+    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white sm:rounded-2xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-primary-800 sm:shadow-2xl relative overflow-hidden w-full">
       {/* Badge de tiempo limitado con contador */}
-      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-accent-600 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-black uppercase tracking-wide transform rotate-12 shadow-lg">
-        <Clock className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1 sm:mr-2" />
+      <div className="absolute top-1.5 right-1.5 sm:top-4 sm:right-4 bg-accent-600 text-white px-1.5 sm:px-3 md:px-4 py-0.5 sm:py-2 rounded-full text-[0.8rem] sm:text-sm font-black uppercase tracking-wide transform rotate-12 shadow-lg">
+        <Clock className="w-2.5 h-2.5 sm:w-4 sm:h-4 inline-block mr-0.5 sm:mr-2" />
         <span className="whitespace-nowrap">{hours.toString().padStart(2, '0')}:{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</span>
       </div>
 
       <div className="relative z-10">
         {/* Título */}
-        <div className="text-center mb-6 sm:mb-8 pr-12 sm:pr-0">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 uppercase break-words">
+        <div className="text-center mb-3 sm:mb-8 pr-10 sm:pr-0">
+          <h2 className="text-[0.8rem] sm:text-2xl md:text-3xl lg:text-4xl font-black mb-1.5 sm:mb-3 uppercase break-words">
             OFERTA ESPECIAL DE PAGO
           </h2>
-          <p className="text-base sm:text-lg md:text-xl opacity-90 break-words">
+          <p className="text-[0.8rem] sm:text-lg md:text-xl opacity-90 break-words">
             Si pagas en menos de 48 horas, puedes dividir el pago en 3 partes
           </p>
         </div>

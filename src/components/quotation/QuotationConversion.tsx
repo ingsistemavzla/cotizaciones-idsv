@@ -50,10 +50,10 @@ export function QuotationConversion() {
       <div className="absolute inset-0 bg-gradient-to-bl from-red-700/50 via-transparent to-red-900/50" />
       
       {/* Contenido */}
-      <div className="relative z-10 p-2 sm:p-4 md:p-6 lg:p-8 xl:p-12 text-white overflow-x-hidden w-full">
+      <div className="relative z-10 p-1.5 sm:p-4 md:p-6 lg:p-8 xl:p-12 text-white overflow-x-hidden w-full">
         {/* Título principal con badge */}
-        <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 sm:mb-4 leading-tight tracking-wide uppercase break-words">
+        <div className="text-center mb-3 sm:mb-8">
+          <h3 className="text-[0.8rem] sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-4 leading-tight tracking-wide uppercase break-words">
             <span className="font-black italic">Desarrollo</span>{' '}
             <span className="font-extrabold underline decoration-2 underline-offset-4">web</span>{' '}
             <span className="font-black">profesional</span>{' '}

@@ -10,8 +10,8 @@ export function QuotationAnalysis({ totalMarketPrice, totalAlliancePrice }: Quot
   const savingsPercentage = ((savings / totalMarketPrice) * 100).toFixed(1)
 
   return (
-    <div className="bg-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg overflow-x-hidden w-full">
-      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-primary-800 mb-4 sm:mb-6 border-b-2 border-primary-600 pb-2 break-words">
+    <div className="bg-white sm:rounded-2xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg overflow-x-hidden w-full">
+      <h3 className="text-[0.8rem] sm:text-xl md:text-2xl lg:text-3xl font-black text-primary-800 mb-2 sm:mb-6 border-b-2 border-primary-600 pb-1 sm:pb-2 break-words">
         CONTRASTE: VALOR REAL VS OFERTA
       </h3>
 

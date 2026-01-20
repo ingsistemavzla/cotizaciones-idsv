@@ -23,20 +23,20 @@ export function QuotationSummary({ summary }: QuotationSummaryProps) {
   const totalOffer = phase1Offer + phase2Offer + phase3Offer
 
   return (
-    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
-      <div className="text-center mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 break-words">
-          <Calculator className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 flex-shrink-0" />
+    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
+      <div className="text-center mb-3 sm:mb-8">
+        <h2 className="text-[0.8rem] sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-1.5 sm:mb-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 break-words">
+          <Calculator className="w-5 h-5 sm:w-8 sm:h-8 text-primary-600 flex-shrink-0" />
           <span>RESUMEN DE INVERSIÓN ESTRUCTURADA</span>
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-neutral-600 font-semibold break-words">VALOR REAL VS OFERTA POR PLATAFORMA</p>
+        <p className="text-[0.8rem] sm:text-base md:text-lg text-neutral-600 font-semibold break-words">VALOR REAL VS OFERTA POR PLATAFORMA</p>
       </div>
 
       {/* Todo vertical - uno encima del otro */}
-      <div className="space-y-4 sm:space-y-6 w-full md:max-w-3xl md:mx-auto">
+      <div className="space-y-3 sm:space-y-6 w-full md:max-w-3xl md:mx-auto">
         {/* Valor Real vs Oferta por Plataforma */}
-        <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 border-2 border-primary-200">
-          <h3 className="text-xl font-black text-primary-800 mb-4">
+        <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-3 sm:p-6 border-2 border-primary-200">
+          <h3 className="text-[0.8rem] sm:text-xl font-black text-primary-800 mb-2 sm:mb-4">
             VALOR REAL POR PLATAFORMA
           </h3>
           

@@ -34,29 +34,29 @@ export function QuotationPhases({ phases }: QuotationPhasesProps) {
   const totalHours = phasesWithPrices.reduce((sum, phase) => sum + phase.marketHours, 0)
 
   return (
-    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-6 sm:mb-8 break-words">
+    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
+      <h2 className="text-[0.8rem] sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-3 sm:mb-8 break-words">
         FASES DEL PROYECTO
       </h2>
 
-      <div className="space-y-6">
+      <div className="space-y-3 sm:space-y-6">
         {phasesWithPrices.map((phase) => (
           <div
             key={phase.id}
             className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-neutral-200"
           >
             {/* Header de la fase */}
-            <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 sm:p-6">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
+            <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-2 sm:p-6">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 sm:gap-4">
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl sm:text-2xl font-black mb-2 break-words">
+                  <h3 className="text-[0.8rem] sm:text-2xl font-black mb-1 sm:mb-2 break-words">
                     FASE {phase.id}
                   </h3>
-                  <p className="text-base sm:text-lg opacity-90 break-words">{phase.name}</p>
+                  <p className="text-[0.8rem] sm:text-lg opacity-90 break-words">{phase.name}</p>
                 </div>
-                <div className="flex items-center gap-2 bg-white/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg flex-shrink-0">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="font-bold text-sm sm:text-base break-words">{phase.duration}</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 px-2 sm:px-4 py-1 sm:py-2 rounded-lg flex-shrink-0">
+                  <Clock className="w-3 h-3 sm:w-5 sm:h-5" />
+                  <span className="font-bold text-[0.8rem] sm:text-base break-words">{phase.duration}</span>
                 </div>
               </div>
             </div>

@@ -7,15 +7,15 @@ interface QuotationObjectiveProps {
 
 export function QuotationObjective({ objective, purpose }: QuotationObjectiveProps) {
   return (
-    <div className="bg-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg overflow-x-hidden w-full">
+    <div className="bg-white sm:rounded-2xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg overflow-x-hidden w-full">
       {/* Propósito */}
-      <div className="mb-10">
-        <h2 className="text-2xl md:text-3xl font-black text-primary-800 mb-4 border-b-2 border-primary-600 pb-2 flex items-center gap-2">
-          <BarChart3 className="w-7 h-7 text-primary-600" />
+      <div className="mb-6 sm:mb-10">
+        <h2 className="text-[0.8rem] sm:text-2xl md:text-3xl font-black text-primary-800 mb-2 sm:mb-4 border-b-2 border-primary-600 pb-1 sm:pb-2 flex items-center gap-1.5 sm:gap-2">
+          <BarChart3 className="w-5 h-5 sm:w-7 sm:h-7 text-primary-600" />
           PROPÓSITO DE ESTA COTIZACIÓN
         </h2>
         <p 
-          className="text-lg text-neutral-700 leading-relaxed"
+          className="text-[0.8rem] sm:text-lg text-neutral-700 leading-relaxed"
           dangerouslySetInnerHTML={{
             __html: purpose
               .replace(
@@ -64,14 +64,14 @@ export function QuotationObjective({ objective, purpose }: QuotationObjectivePro
 
       {/* Análisis de Valor Real por Sección */}
       <div>
-        <h3 className="text-2xl font-black text-primary-800 mb-2 border-b-2 border-primary-600 pb-2 flex items-center gap-2">
-          <Calculator className="w-7 h-7 text-primary-600" />
+        <h3 className="text-[0.8rem] sm:text-2xl font-black text-primary-800 mb-1.5 sm:mb-2 border-b-2 border-primary-600 pb-1 sm:pb-2 flex items-center gap-1.5 sm:gap-2">
+          <Calculator className="w-5 h-5 sm:w-7 sm:h-7 text-primary-600" />
           ANÁLISIS DE VALOR REAL POR SECCIÓN
         </h3>
-        <p className="text-lg text-neutral-600 mb-6 font-semibold">DESGLOSE TÉCNICO Y ECONÓMICO</p>
+        <p className="text-[0.8rem] sm:text-lg text-neutral-600 mb-3 sm:mb-6 font-semibold">DESGLOSE TÉCNICO Y ECONÓMICO</p>
 
-        <div className="bg-white rounded-lg p-6 md:p-8 border-2 border-primary-300 shadow-md mb-6">
-          <p className="text-base text-neutral-700 leading-relaxed mb-6">
+        <div className="bg-white rounded-lg p-3 sm:p-6 md:p-8 border-2 border-primary-300 shadow-md mb-3 sm:mb-6">
+          <p className="text-[0.8rem] sm:text-base text-neutral-700 leading-relaxed mb-3 sm:mb-6">
             En el mercado actual, el desarrollo profesional de{' '}
             <strong className="text-primary-700">cada sección/URL estratégica</strong> (como por ejemplo: <a href="https://federaciondecoaching.com/destrezas/" target="_blank" rel="noopener noreferrer" className="text-primary-700 underline font-semibold">/destrezas/</a> en Federación de Coaching o <a href="https://academiadecoach.com/coaching-de-transformacion/" target="_blank" rel="noopener noreferrer" className="text-primary-700 underline font-semibold">/coaching-de-transformacion/</a> en Academia de Coaching) tiene un{' '}
             <strong className="text-primary-700">valor comercial real entre $30-40 USD</strong>,

@@ -70,51 +70,51 @@ export function QuotationPaymentPlan() {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
 
   return (
-    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-2xl p-8 border-2 border-primary-800 shadow-2xl relative overflow-hidden">
+    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-primary-800 shadow-2xl relative overflow-hidden">
       {/* Badge de tiempo limitado con contador */}
-      <div className="absolute top-4 right-4 bg-accent-600 text-white px-4 py-2 rounded-full text-sm font-black uppercase tracking-wide transform rotate-12 shadow-lg">
-        <Clock className="w-4 h-4 inline-block mr-2" />
-        {hours.toString().padStart(2, '0')}:{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
+      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-accent-600 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-black uppercase tracking-wide transform rotate-12 shadow-lg">
+        <Clock className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1 sm:mr-2" />
+        <span className="whitespace-nowrap">{hours.toString().padStart(2, '0')}:{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</span>
       </div>
 
       <div className="relative z-10">
         {/* Título */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-black mb-3 uppercase">
+        <div className="text-center mb-6 sm:mb-8 pr-12 sm:pr-0">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 uppercase break-words">
             OFERTA ESPECIAL DE PAGO
           </h2>
-          <p className="text-xl opacity-90">
+          <p className="text-base sm:text-lg md:text-xl opacity-90 break-words">
             Si pagas en menos de 48 horas, puedes dividir el pago en 3 partes
           </p>
         </div>
 
         {/* Plan de pagos */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
           {/* Cuota 1 */}
           {installments.map((installment, index) => {
             if (installment.number === 1) {
               return (
                 <div
                   key={installment.number}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/20 hover:bg-white/15 transition-all"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border-2 border-white/20 hover:bg-white/15 transition-all"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex items-center gap-4 flex-1">
-                      <div className="bg-white text-primary-700 rounded-full w-12 h-12 flex items-center justify-center font-black text-xl flex-shrink-0">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
+                    <div className="flex items-start sm:items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                      <div className="bg-white text-primary-700 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-black text-lg sm:text-xl flex-shrink-0">
                         {installment.number}
                       </div>
-                      <div className="flex-1">
-                        <p className="text-lg font-bold mb-1">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-base sm:text-lg font-bold mb-1 break-words">
                           Cuota {installment.number} - {installment.status}
                         </p>
-                        <p className="text-sm opacity-90">{installment.description}</p>
+                        <p className="text-xs sm:text-sm opacity-90 break-words">{installment.description}</p>
                       </div>
                     </div>
-                    <div className="bg-red-600 text-white px-6 py-3 rounded-2xl border-2 border-red-500 shadow-lg text-right">
-                      <p className="text-xs font-semibold uppercase tracking-wide opacity-90">
+                    <div className="bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border-2 border-red-500 shadow-lg text-center md:text-right w-full md:w-auto">
+                      <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide opacity-90 break-words">
                         Empieza hoy tu desarrollo desde
                       </p>
-                      <p className="text-3xl font-black mt-1">${installment.amount} USD</p>
+                      <p className="text-2xl sm:text-3xl font-black mt-1 break-words">${installment.amount} USD</p>
                     </div>
                   </div>
                 </div>
@@ -124,8 +124,8 @@ export function QuotationPaymentPlan() {
           })}
           
           {/* Texto entre cuota 1 y cuotas 2-3 */}
-          <div className="text-center py-4 border-t border-white/20 border-b border-white/20">
-            <p className="text-lg font-semibold opacity-90">
+          <div className="text-center py-3 sm:py-4 border-t border-white/20 border-b border-white/20">
+            <p className="text-sm sm:text-base md:text-lg font-semibold opacity-90 break-words px-2">
               Paga el resto en dos cómodas cuotas al terminar cada plataforma
             </p>
           </div>
@@ -136,32 +136,32 @@ export function QuotationPaymentPlan() {
               return (
                 <div
                   key={installment.number}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/20 hover:bg-white/15 transition-all"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border-2 border-white/20 hover:bg-white/15 transition-all"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex items-center gap-4 flex-1">
-                      <div className="bg-white text-primary-700 rounded-full w-12 h-12 flex items-center justify-center font-black text-xl flex-shrink-0">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
+                    <div className="flex items-start sm:items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                      <div className="bg-white text-primary-700 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-black text-lg sm:text-xl flex-shrink-0">
                         {installment.number}
                       </div>
-                      <div>
-                        <p className="text-lg font-bold mb-1">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-base sm:text-lg font-bold mb-1 break-words">
                           Cuota {installment.number} - {installment.status}
                         </p>
-                        <p className="text-sm opacity-90 mb-2">{installment.description}</p>
+                        <p className="text-xs sm:text-sm opacity-90 mb-2 break-words">{installment.description}</p>
                         {installment.platform && (
                           <a 
                             href={installment.platform} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="inline-block bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:from-red-700 hover:to-red-800 transition-all shadow-sm"
+                            className="inline-block bg-gradient-to-r from-red-600 to-red-700 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-semibold hover:from-red-700 hover:to-red-800 transition-all shadow-sm break-all"
                           >
                             {installment.platform}
                           </a>
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl font-black">${installment.amount} USD</span>
+                    <div className="flex items-center gap-3 justify-end md:justify-start">
+                      <span className="text-2xl sm:text-3xl font-black break-words">${installment.amount} USD</span>
                     </div>
                   </div>
                 </div>
@@ -172,22 +172,22 @@ export function QuotationPaymentPlan() {
         </div>
 
         {/* Total */}
-        <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 border-2 border-white/30">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-xl font-bold">Total del Plan:</span>
-            <span className="text-3xl font-black">${total} USD</span>
+        <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 border-2 border-white/30">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-2">
+            <span className="text-lg sm:text-xl font-bold break-words">Total del Plan:</span>
+            <span className="text-2xl sm:text-3xl font-black break-words">${total} USD</span>
           </div>
-          <div className="flex items-center gap-2 text-sm opacity-90 mt-2">
-            <CheckCircle2 className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-xs sm:text-sm opacity-90 mt-2 break-words">
+            <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
             <span>Mismo precio total, pagado en 3 partes cómodas</span>
           </div>
         </div>
 
         {/* Condición */}
-        <div className="mt-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-accent-600/30 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-accent-500">
-            <Clock className="w-5 h-5" />
-            <span className="font-bold">
+        <div className="mt-4 sm:mt-6 text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 bg-accent-600/30 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 border-accent-500 max-w-full">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+            <span className="font-bold text-xs sm:text-sm md:text-base break-words">
               Válido solo si confirmas en menos de 48 horas
             </span>
           </div>

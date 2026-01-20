@@ -23,13 +23,13 @@ export function QuotationSummary({ summary }: QuotationSummaryProps) {
   const totalOffer = phase1Offer + phase2Offer + phase3Offer
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-neutral-200">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-black text-primary-800 mb-2 flex items-center justify-center gap-3">
-          <Calculator className="w-8 h-8 text-primary-600" />
-          RESUMEN DE INVERSIÓN ESTRUCTURADA
+    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 overflow-x-hidden">
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 break-words">
+          <Calculator className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 flex-shrink-0" />
+          <span>RESUMEN DE INVERSIÓN ESTRUCTURADA</span>
         </h2>
-        <p className="text-lg text-neutral-600 font-semibold">VALOR REAL VS OFERTA POR PLATAFORMA</p>
+        <p className="text-sm sm:text-base md:text-lg text-neutral-600 font-semibold break-words">VALOR REAL VS OFERTA POR PLATAFORMA</p>
       </div>
 
       {/* Todo vertical - uno encima del otro */}

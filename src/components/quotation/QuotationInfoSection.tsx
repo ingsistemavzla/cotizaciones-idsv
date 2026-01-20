@@ -23,7 +23,7 @@ export function QuotationInfoSection({
   objective,
 }: QuotationInfoSectionProps) {
   return (
-    <div className="bg-white rounded-2xl p-8 border-2 border-neutral-200 shadow-lg space-y-8">
+    <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 shadow-lg space-y-6 sm:space-y-8 overflow-x-hidden">
       {/* EMISOR primero */}
       <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-6 border border-primary-200">
         <h3 className="text-xl font-bold text-primary-600 mb-4 pb-2 border-b-2 border-primary-600 flex items-center gap-2">

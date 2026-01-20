@@ -92,16 +92,16 @@ export function Quotation({
     <div
       ref={quotationRef}
       id="quotation-content"
-      className="bg-gradient-to-br from-neutral-100 via-white to-neutral-50 min-h-screen py-8 px-4 print:py-0 print:px-0 print:bg-white"
+      className="bg-gradient-to-br from-neutral-100 via-white to-neutral-50 min-h-screen py-4 sm:py-8 px-2 sm:px-4 print:py-0 print:px-0 print:bg-white overflow-x-hidden"
     >
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden print:shadow-none print:rounded-none">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden print:shadow-none print:rounded-none w-full">
         <QuotationHeader
           client={quotation.client}
           details={quotation.details}
           objective={quotation.objective}
         />
         
-        <div className="p-6 md:p-10 space-y-10 print:p-8 animate-fade-in">
+        <div className="p-4 sm:p-6 md:p-10 space-y-6 sm:space-y-10 print:p-8 animate-fade-in">
           {/* Información del Cliente, Detalles y Objetivo */}
           <QuotationInfoSection
             client={quotation.client}

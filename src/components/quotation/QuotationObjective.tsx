@@ -7,7 +7,7 @@ interface QuotationObjectiveProps {
 
 export function QuotationObjective({ objective, purpose }: QuotationObjectiveProps) {
   return (
-    <div className="bg-white rounded-2xl p-8 border-2 border-neutral-200 shadow-lg">
+    <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 shadow-lg overflow-x-hidden">
       {/* Propósito */}
       <div className="mb-10">
         <h2 className="text-2xl md:text-3xl font-black text-primary-800 mb-4 border-b-2 border-primary-600 pb-2 flex items-center gap-2">
@@ -131,43 +131,43 @@ export function QuotationObjective({ objective, purpose }: QuotationObjectivePro
         </p>
 
         {/* Tecnologías y referencia visual a plataformas de clase mundial */}
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm mb-2">
-            <span className="font-semibold text-primary-800">Tecnologías aplicadas:</span>
-            <span className="px-2 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-sm mb-2">
+            <span className="font-semibold text-primary-800 break-words">Tecnologías aplicadas:</span>
+            <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs sm:text-sm">
               React 18
             </span>
-            <span className="px-2 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200">
+            <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs sm:text-sm">
               Vite
             </span>
-            <span className="px-2 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200">
+            <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-xs sm:text-sm">
               Tailwind CSS
             </span>
           </div>
-          <div className="flex flex-wrap items-center gap-3 mt-3">
-            <span className="font-semibold text-primary-700 text-sm">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-3">
+            <span className="font-semibold text-primary-700 text-xs sm:text-sm break-words">
               Tecnologías que usan grandes plataformas como:
             </span>
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               <img
                 src="https://1000marcas.net/wp-content/uploads/2019/12/Facebook-Logo.jpg"
                 alt="Facebook"
-                className="h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-1"
+                className="h-6 sm:h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-0.5 sm:p-1 max-w-full"
               />
               <img
                 src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Netflix.png"
                 alt="Netflix"
-                className="h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-1"
+                className="h-6 sm:h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-0.5 sm:p-1 max-w-full"
               />
               <img
                 src="https://1000marcas.net/wp-content/uploads/2020/10/Shopify-Logo.png"
                 alt="Shopify"
-                className="h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-1"
+                className="h-6 sm:h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-0.5 sm:p-1 max-w-full"
               />
               <img
                 src="https://i.blogs.es/c08b7f/paypal-784404_1280/450_1000.webp"
                 alt="PayPal"
-                className="h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-1"
+                className="h-6 sm:h-8 w-auto rounded bg-white object-contain border border-neutral-200 p-0.5 sm:p-1 max-w-full"
               />
             </div>
           </div>

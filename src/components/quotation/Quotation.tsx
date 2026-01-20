@@ -94,14 +94,14 @@ export function Quotation({
       id="quotation-content"
       className="bg-gradient-to-br from-neutral-100 via-white to-neutral-50 min-h-screen py-2 sm:py-4 md:py-8 px-0 sm:px-2 md:px-4 print:py-0 print:px-0 print:bg-white overflow-x-hidden"
     >
-      <div className="w-full md:max-w-6xl md:mx-auto bg-white sm:rounded-2xl sm:shadow-2xl overflow-hidden print:shadow-none print:rounded-none">
+      <div className="w-full md:max-w-6xl md:mx-auto bg-white sm:rounded-2xl sm:shadow-2xl overflow-hidden print:shadow-none print:rounded-none max-w-full">
         <QuotationHeader
           client={quotation.client}
           details={quotation.details}
           objective={quotation.objective}
         />
         
-        <div className="p-2 sm:p-4 md:p-6 lg:p-10 space-y-4 sm:space-y-6 md:space-y-10 print:p-8 animate-fade-in">
+        <div className="p-1.5 sm:p-4 md:p-6 lg:p-10 space-y-3 sm:space-y-6 md:space-y-10 print:p-8 animate-fade-in">
           {/* Información del Cliente, Detalles y Objetivo */}
           <QuotationInfoSection
             client={quotation.client}
@@ -136,7 +136,7 @@ export function Quotation({
           <QuotationConversion />
         </div>
 
-        <div className="p-2 sm:p-4 md:p-6 lg:p-10 print:p-8">
+        <div className="p-1.5 sm:p-4 md:p-6 lg:p-10 print:p-8">
           <QuotationFooter
             date={quotation.details.date}
             reference={quotation.details.reference}

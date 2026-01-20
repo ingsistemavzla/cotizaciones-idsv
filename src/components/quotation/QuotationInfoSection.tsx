@@ -23,14 +23,14 @@ export function QuotationInfoSection({
   objective,
 }: QuotationInfoSectionProps) {
   return (
-    <div className="bg-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg space-y-4 sm:space-y-6 md:space-y-8 overflow-x-hidden w-full">
+    <div className="bg-white sm:rounded-2xl p-1.5 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg space-y-3 sm:space-y-6 md:space-y-8 overflow-x-hidden w-full">
       {/* EMISOR primero */}
-      <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-6 border border-primary-200">
-        <h3 className="text-xl font-bold text-primary-600 mb-4 pb-2 border-b-2 border-primary-600 flex items-center gap-2">
-          <Building2 className="w-5 h-5" />
+      <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-3 sm:p-6 border border-primary-200">
+        <h3 className="text-[0.8rem] sm:text-xl font-bold text-primary-600 mb-2 sm:mb-4 pb-1 sm:pb-2 border-b-2 border-primary-600 flex items-center gap-1.5 sm:gap-2">
+          <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
           EMISOR:
         </h3>
-        <div className="space-y-2 text-base">
+        <div className="space-y-1.5 sm:space-y-2 text-[0.8rem] sm:text-base">
           <div>
             <strong className="text-primary-800">{brand.name.full}</strong>
           </div>
@@ -50,14 +50,14 @@ export function QuotationInfoSection({
       </div>
 
       {/* CLIENTE y DETALLES al lado */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-3 sm:gap-6">
         {/* Información del Cliente */}
-        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-6 border border-primary-200">
-          <h3 className="text-xl font-bold text-primary-600 mb-4 pb-2 border-b-2 border-primary-600 flex items-center gap-2">
-            <User className="w-5 h-5" />
+        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-3 sm:p-6 border border-primary-200">
+          <h3 className="text-[0.8rem] sm:text-xl font-bold text-primary-600 mb-2 sm:mb-4 pb-1 sm:pb-2 border-b-2 border-primary-600 flex items-center gap-1.5 sm:gap-2">
+            <User className="w-4 h-4 sm:w-5 sm:h-5" />
             CLIENTE:
           </h3>
-          <div className="space-y-3 text-base">
+          <div className="space-y-2 sm:space-y-3 text-[0.8rem] sm:text-base">
             <div>
               <strong className="text-primary-800">Dirigido a:</strong>{' '}
               <span className="text-neutral-700">{client.target}</span>
@@ -80,12 +80,12 @@ export function QuotationInfoSection({
         </div>
 
         {/* Detalles de la Cotización */}
-        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-6 border border-primary-200">
-          <h3 className="text-xl font-bold text-primary-600 mb-4 pb-2 border-b-2 border-primary-600 flex items-center gap-2">
-            <Calendar className="w-5 h-5" />
+        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-3 sm:p-6 border border-primary-200">
+          <h3 className="text-[0.8rem] sm:text-xl font-bold text-primary-600 mb-2 sm:mb-4 pb-1 sm:pb-2 border-b-2 border-primary-600 flex items-center gap-1.5 sm:gap-2">
+            <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
             DETALLES
           </h3>
-          <div className="space-y-3 text-base">
+          <div className="space-y-2 sm:space-y-3 text-[0.8rem] sm:text-base">
             <div>
               <strong className="text-primary-800">Fecha:</strong>{' '}
               <span className="text-neutral-700">{details.date}</span>
@@ -110,12 +110,12 @@ export function QuotationInfoSection({
 
       {/* OBJETIVO abajo completo */}
       {objective && (
-        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-6 border border-primary-200">
-          <h3 className="text-xl font-bold text-primary-600 mb-4 pb-2 border-b-2 border-primary-600 flex items-center gap-2">
-            <Target className="w-5 h-5" />
+        <div className="bg-gradient-to-br from-primary-50 to-primary-100/50 rounded-lg p-3 sm:p-6 border border-primary-200">
+          <h3 className="text-[0.8rem] sm:text-xl font-bold text-primary-600 mb-2 sm:mb-4 pb-1 sm:pb-2 border-b-2 border-primary-600 flex items-center gap-1.5 sm:gap-2">
+            <Target className="w-4 h-4 sm:w-5 sm:h-5" />
             OBJETIVO
           </h3>
-          <div className="text-base leading-relaxed space-y-2 text-neutral-700">
+          <div className="text-[0.8rem] sm:text-base leading-relaxed space-y-1.5 sm:space-y-2 text-neutral-700">
             {objective.split('\n').map((line, index) => {
               // Palabras clave a destacar con negrita azul oscuro
               const keywords = [

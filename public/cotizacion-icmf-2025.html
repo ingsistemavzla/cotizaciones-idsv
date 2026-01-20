@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COTIZACIÓN OFICIAL - Transformación Digital 2x1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://federaciondecoaching.com/wp-content/uploads/2025/04/IDSV-LOGO.png">
+    <style>
+        :root {
+            /* PALETA DE COLORES SIMPLIFICADA - SOLO AZULES Y ROJOS */
+            --azul-profesional: #0056b3;
+            --azul-oscuro: #003366;
+            --azul-electrico: #0074E4;
+            --azul-claro: #4dabf7;
+            --azul-suave: #e3f2fd;
+            
+            --rojo-profesional: #D91E18;
+            --rojo-oscuro: #B51A15;
+            --rojo-vibrante: #FF4444;
+            --rojo-suave: #ffebee;
+            
+            /* ESCALA DE GRISES */
+            --gris-oscuro: #333333;
+            --gris-medio: #666666;
+            --gris-claro: #f5f5f5;
+            --gris-border: #dddddd;
+            --gris-texto: #555555;
+            
+            --blanco: #FFFFFF;
+            --negro: #222222;
+            
+            /* SISTEMA DE SOMBRAS */
+            --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --sombra-media: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --sombra-fuerte: 0 12px 36px rgba(0, 0, 0, 0.2);
+            --sombra-destacada: 0 6px 20px rgba(0, 86, 179, 0.25);
+            
+            /* RADIOS DE BORDE */
+            --radio-sm: 6px;
+            --radio-md: 10px;
+            --radio-lg: 15px;
+            --radio-xl: 20px;
+            --radio-full: 9999px;
+            
+            /* ESPACIADO */
+            --espacio-xs: 8px;
+            --espacio-sm: 16px;
+            --espacio-md: 24px;
+            --espacio-lg: 32px;
+            --espacio-xl: 48px;
+            --espacio-2xl: 64px;
+            
+            /* TIPOGRAFÍA */
+            --tamano-xs: 0.875rem;
+            --tamano-sm: 1rem;
+            --tamano-base: 1.125rem;
+            --tamano-lg: 1.25rem;
+            --tamano-xl: 1.5rem;
+            --tamano-2xl: 1.875rem;
+            --tamano-3xl: 2.25rem;
+            --tamano-4xl: 3rem;
+        }
+        
+        /* RESET Y ESTILOS BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f9f9f9 0%, #eef2f7 100%);
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+            padding: var(--espacio-md);
+            min-height: 100vh;
+        }
+        
+        /* CONTENEDOR PRINCIPAL */
+        .invoice-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--blanco);
+            border-radius: var(--radio-xl);
+            overflow: hidden;
+            box-shadow: var(--sombra-fuerte);
+            position: relative;
+            border: 1px solid var(--gris-border);
+        }
+        
+        /* ENCABEZADO PRINCIPAL */
+        .invoice-header {
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-profesional));
+            color: var(--blanco);
+            padding: var(--espacio-xl);
+            text-align: center;
+            position: relative;
+            min-height: 180px;
+            overflow: hidden;
+        }
+        
+        .invoice-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .invoice-title {
+            font-size: var(--tamano-4xl);
+            margin: 0 0 var(--espacio-sm);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .invoice-subtitle {
+            font-size: var(--tamano-lg);
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        /* LOGO IDSV Y BADGE */
+        .logo-badge {
+            position: absolute;
+            left: var(--espacio-xl);
+            top: var(--espacio-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-md);
+        }
+        
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            background: var(--blanco);
+            border-radius: var(--radio-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--sombra-media);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            padding: 10px;
+        }
+        
+        .logo-idsv {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .badge-alianza {
+            background: linear-gradient(135deg, var(--rojo-profesional), var(--rojo-vibrante));
+            color: var(--blanco);
+            padding: var(--espacio-xs) var(--espacio-md);
+            border-radius: var(--radio-full);
+            font-weight: 700;
+            font-size: var(--tamano-sm);
+            letter-spacing: 1px;
+            box-shadow: var(--sombra-media);
+            transform: rotate(-5deg);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            50% { transform: rotate(-5deg) scale(1.05); }
+        }
+        
+        /* CUERPO DE LA COTIZACIÓN */
+        .invoice-body {
+            padding: var(--espacio-2xl);
+        }
+        
+        /* SECCIÓN DE INFORMACIÓN PRINCIPAL */
+        .main-info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            padding: var(--espacio-lg);
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.05), rgba(0, 51, 102, 0.03));
+            border-radius: var(--radio-lg);
+            border: 2px solid rgba(0, 86, 179, 0.1);
+        }
+        
+        .info-block {
+            padding: var(--espacio-md);
+        }
+        
+        .info-title {
+            font-weight: 700;
+            color: var(--azul-profesional);
+            margin-bottom: var(--espacio-md);
+            font-size: var(--tamano-lg);
+            border-bottom: 3px solid var(--azul-profesional);
+            padding-bottom: var(--espacio-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-sm);
+        }
+        
+        .info-title i {
+            font-size: var(--tamano-xl);
+        }
+        
+        .info-detail {
+            margin-bottom: var(--espacio-sm);
+            font-size: var(--tamano-base);
+            line-height: 1.6;
+        }
+        
+        .info-highlight {
+            color: var(--rojo-profesional);
+            font-weight: 700;
+            background: rgba(217, 30, 24, 0.1);
+            padding: 2px 8px;
+            border-radius: var(--radio-sm);
+            display: inline-block;
+        }
+        
+        /* SECCIÓN DE PROPÓSITO */
+        .purpose-section {
+            background: linear-gradient(135deg, var(--azul-suave), var(--blanco));
+            border-radius: var(--radio-xl);
+            padding: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            border-left: 6px solid var(--azul-electrico);
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .section-title {
+            font-size: var(--tamano-2xl);
+            color: var(--azul-oscuro);
+            margin-bottom: var(--espacio-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-sm);
+        }
+        
+        .section-title i {
+            color: var(--azul-electrico);
+        }
+        
+        .purpose-content {
+            font-size: var(--tamano-base);
+            line-height: 1.7;
+            color: var(--gris-oscuro);
+            margin-bottom: var(--espacio-lg);
+        }
+        
+        .subtitle {
+            font-size: var(--tamano-xl);
+            color: var(--azul-profesional);
+            margin: var(--espacio-lg) 0 var(--espacio-md);
+            font-weight: 600;
+        }
+        
+        .value-calc {
+            background: var(--blanco);
+            padding: var(--espacio-lg);
+            border-radius: var(--radio-lg);
+            margin: var(--espacio-lg) 0;
+            border: 2px solid var(--azul-claro);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: var(--tamano-base);
+            line-height: 1.8;
+            box-shadow: var(--sombra-suave);
+        }
+        
+        .value-calc strong {
+            color: var(--azul-profesional);
+        }
+        
+        .value-list {
+            list-style: none;
+            padding-left: 0;
+            margin: var(--espacio-md) 0;
+        }
+        
+        .value-list li {
+            padding: var(--espacio-xs) 0;
+            border-bottom: 1px dashed var(--azul-claro);
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-sm);
+        }
+        
+        .value-list li i {
+            color: var(--azul-profesional);
+        }
+        
+        /* DESGLOSE DE SECCIONES */
+        .breakdown-section {
+            background: var(--blanco);
+            border-radius: var(--radio-xl);
+            padding: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            box-shadow: var(--sombra-suave);
+            border: 2px solid var(--gris-border);
+        }
+        
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--espacio-lg);
+            margin-top: var(--espacio-lg);
+        }
+        
+        .section-column {
+            padding: var(--espacio-md);
+        }
+        
+        .section-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--espacio-sm);
+            border-bottom: 1px solid var(--gris-border);
+        }
+        
+        .section-name {
+            color: var(--gris-oscuro);
+            font-size: var(--tamano-base);
+            flex: 1;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-sm);
+        }
+        
+        .price-real {
+            color: var(--rojo-profesional);
+            text-decoration: line-through;
+            font-size: var(--tamano-sm);
+            font-weight: 500;
+        }
+        
+        .price-offer {
+            color: var(--azul-profesional);
+            font-weight: 700;
+            font-size: var(--tamano-base);
+        }
+        
+        .total-box {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.1), rgba(0, 116, 228, 0.05));
+            padding: var(--espacio-lg);
+            border-radius: var(--radio-lg);
+            margin-top: var(--espacio-xl);
+            text-align: center;
+            border: 2px solid var(--azul-claro);
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: var(--espacio-sm) 0;
+            padding: var(--espacio-xs) 0;
+        }
+        
+        .total-label {
+            font-weight: 600;
+            color: var(--azul-oscuro);
+            font-size: var(--tamano-lg);
+        }
+        
+        .total-real {
+            color: var(--rojo-profesional);
+            text-decoration: line-through;
+            font-size: var(--tamano-lg);
+            font-weight: 600;
+        }
+        
+        .total-offer {
+            color: var(--azul-profesional);
+            font-weight: 800;
+            font-size: var(--tamano-xl);
+        }
+        
+        /* SECCIÓN DE MÓDULOS */
+        .modules-section {
+            background: var(--blanco);
+            border-radius: var(--radio-xl);
+            padding: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            box-shadow: var(--sombra-suave);
+            border: 2px solid var(--gris-border);
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--espacio-lg);
+            margin-top: var(--espacio-lg);
+        }
+        
+        .module-card {
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+            border-radius: var(--radio-lg);
+            padding: var(--espacio-lg);
+            border: 2px solid rgba(0, 86, 179, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-destacada);
+            border-color: var(--azul-claro);
+        }
+        
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--azul-electrico), var(--azul-claro));
+            border-radius: var(--radio-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            margin-bottom: var(--espacio-md);
+            font-size: var(--tamano-xl);
+        }
+        
+        .module-title {
+            color: var(--azul-oscuro);
+            margin-bottom: var(--espacio-sm);
+            font-size: var(--tamano-lg);
+        }
+        
+        .module-description {
+            color: var(--gris-texto);
+            font-size: var(--tamano-base);
+            line-height: 1.6;
+        }
+        
+        /* SECCIÓN DE FASES */
+        .phases-section {
+            background: var(--blanco);
+            border-radius: var(--radio-xl);
+            padding: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            box-shadow: var(--sombra-media);
+            border: 2px solid var(--gris-border);
+        }
+        
+        .phases-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--espacio-lg);
+            margin-top: var(--espacio-lg);
+        }
+        
+        .phase-card {
+            border-radius: var(--radio-lg);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+        }
+        
+        .phase-header {
+            padding: var(--espacio-md) var(--espacio-lg);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--espacio-sm);
+        }
+        
+        .phase-header.fase-1 {
+            background: linear-gradient(135deg, var(--azul-profesional), var(--azul-electrico));
+        }
+        
+        .phase-header.fase-2 {
+            background: linear-gradient(135deg, var(--rojo-profesional), var(--rojo-vibrante));
+        }
+        
+        .phase-header.fase-3 {
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-profesional));
+        }
+        
+        .phase-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--espacio-xs) var(--espacio-md);
+            border-radius: var(--radio-full);
+            font-weight: 700;
+            font-size: var(--tamano-sm);
+        }
+        
+        .phase-title {
+            margin: 0;
+            flex-grow: 1;
+            font-size: var(--tamano-lg);
+        }
+        
+        .phase-duration {
+            font-weight: 600;
+            font-size: var(--tamano-base);
+        }
+        
+        .phase-details {
+            background: var(--blanco);
+            padding: var(--espacio-lg);
+        }
+        
+        .activity-row {
+            display: flex;
+            align-items: center;
+            padding: var(--espacio-sm);
+            border-bottom: 1px solid var(--gris-border);
+        }
+        
+        .activity-name {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: var(--espacio-sm);
+            color: var(--gris-oscuro);
+        }
+        
+        .activity-hours, .activity-value {
+            width: 80px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--azul-profesional);
+        }
+        
+        .phase-summary {
+            padding: var(--espacio-md);
+            background: linear-gradient(135deg, var(--gris-claro), #f8f9fa);
+            border-radius: var(--radio-md);
+            margin-top: var(--espacio-md);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--tamano-base);
+        }
+        
+        .summary-value {
+            font-weight: 700;
+            color: var(--azul-profesional);
+            font-size: var(--tamano-lg);
+        }
+        
+        /* RESUMEN DE INVERSIÓN */
+        .investment-summary {
+            background: var(--blanco);
+            border-radius: var(--radio-xl);
+            padding: var(--espacio-xl);
+            margin-bottom: var(--espacio-2xl);
+            box-shadow: var(--sombra-media);
+            border: 2px solid var(--gris-border);
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--espacio-lg);
+            margin-top: var(--espacio-lg);
+        }
+        
+        .summary-card {
+            background: var(--blanco);
+            border-radius: var(--radio-lg);
+            padding: var(--espacio-lg);
+            border: 2px solid var(--gris-border);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .summary-card.highlight {
+            border: 3px solid var(--azul-claro);
+            box-shadow: var(--sombra-destacada);
+        }
+        
+        .summary-card-header {
+            text-align: center;
+            margin-bottom: var(--espacio-md);
+        }
+        
+        .summary-card-header i {
+            font-size: var(--tamano-2xl);
+            color: var(--azul-profesional);
+            margin-bottom: var(--espacio-sm);
+        }
+        
+        .summary-card-header h4 {
+            color: var(--azul-oscuro);
+            margin: 0;
+            font-size: var(--tamano-base);
+        }
+        
+        .cost-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: var(--espacio-sm);
+            margin-bottom: var(--espacio-md);
+        }
+        
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--espacio-xs) 0;
+            border-bottom: 1px dashed var(--gris-border);
+            color: var(--gris-texto);
+        }
+        
+        .cost-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--espacio-sm) 0;
+            margin-top: var(--espacio-sm);
+            border-top: 2px solid var(--gris-border);
+            color: var(--azul-oscuro);
+            font-weight: 600;
+        }
+        
+        .cost-value {
+            font-weight: 600;
+            color: var(--azul-profesional);
+        }
+        
+        .membership-badge {
+            background: linear-gradient(135deg, var(--azul-profesional), var(--azul-electrico));
+            color: var(--blanco);
+            padding: var(--espacio-xs) var(--espacio-md);
+            border-radius: var(--radio-full);
+            font-weight: 700;
+            font-size: var(--tamano-sm);
+            letter-spacing: 0.5px;
+            margin-bottom: var(--espacio-md);
+            display: inline-block;
+        }
+        
+        .price-comparison {
+            margin: var(--espacio-md) 0;
+        }
+        
+        .regular-price, .special-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: var(--espacio-sm) 0;
+            padding: var(--espacio-sm);
+            border-radius: var(--radio-md);
+        }
+        
+        .regular-price {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: var(--gris-medio);
+        }
+        
+        .special-price {
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.1), rgba(0, 116, 228, 0.05));
+            color: var(--azul-oscuro);
+        }
+        
+        .price-value {
+            font-weight: 800;
+            font-size: var(--tamano-lg);
+        }
+        
+        /* BOTONES DE ACCIÓN */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--espacio-lg);
+            margin: var(--espacio-2xl) 0;
+            padding: 0 var(--espacio-md);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--espacio-lg) var(--espacio-2xl);
+            border-radius: var(--radio-full);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: var(--tamano-base);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--sombra-media);
+            min-width: 200px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-fuerte);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .btn-print {
+            background: linear-gradient(135deg, var(--azul-profesional), var(--azul-oscuro));
+            color: var(--blanco);
+        }
+        
+        .btn-download {
+            background: linear-gradient(135deg, var(--rojo-profesional), var(--rojo-oscuro));
+            color: var(--blanco);
+        }
+        
+        .btn-contact {
+            background: linear-gradient(135deg, var(--azul-electrico), var(--azul-claro));
+            color: var(--blanco);
+        }
+        
+        .btn i {
+            margin-right: var(--espacio-sm);
+            font-size: var(--tamano-lg);
+        }
+        
+        /* FIRMA IDSV */
+        .signature-section {
+            margin-top: var(--espacio-2xl);
+            text-align: center;
+            padding: var(--espacio-xl);
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.05), rgba(0, 116, 228, 0.03));
+            border-radius: var(--radio-lg);
+            border: 2px solid var(--azul-claro);
+        }
+        
+        .signature-logo {
+            height: 80px;
+            margin: var(--espacio-md) 0;
+        }
+        
+        /* PIE DE PÁGINA */
+        .invoice-footer {
+            text-align: center;
+            padding: var(--espacio-xl);
+            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-profesional));
+            font-size: var(--tamano-sm);
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+        
+        .invoice-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--rojo-profesional), var(--rojo-vibrante));
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-section {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--espacio-sm);
+            }
+            
+            .invoice-container {
+                border-radius: var(--radio-lg);
+            }
+            
+            .invoice-header {
+                padding: var(--espacio-lg);
+                min-height: auto;
+            }
+            
+            .invoice-title {
+                font-size: var(--tamano-2xl);
+                margin-top: var(--espacio-lg);
+            }
+            
+            .logo-badge {
+                position: static;
+                justify-content: center;
+                margin-bottom: var(--espacio-md);
+                flex-wrap: wrap;
+            }
+            
+            .logo-container {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .invoice-body {
+                padding: var(--espacio-lg);
+            }
+            
+            .main-info-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .breakdown-grid,
+            .modules-grid,
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--espacio-sm);
+            }
+            
+            .activity-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--espacio-xs);
+            }
+            
+            .activity-hours, .activity-value {
+                width: auto;
+                align-self: flex-end;
+            }
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .invoice-container {
+                box-shadow: none;
+                border-radius: 0;
+                border: 1px solid #ccc;
+            }
+            
+            .action-buttons {
+                display: none;
+            }
+            
+            .btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="invoice-container" id="invoice-content">
+        <!-- ENCABEZADO PRINCIPAL -->
+        <div class="invoice-header">
+            <div class="logo-badge">
+                <div class="logo-container">
+                    <img src="https://federaciondecoaching.com/wp-content/uploads/2025/04/IDSV-LOGO.png" 
+                         alt="Logo IDSV - Ingenieros de Sistemas Venezuela" 
+                         class="logo-idsv">
+                </div>
+                <div class="badge-alianza">ALIANZA ESTRATÉGICA 2x1</div>
+            </div>
+            
+            <div class="header-content">
+                <h1 class="invoice-title">COTIZACIÓN OFICIAL - TRANSFORMACIÓN DIGITAL 2x1</h1>
+                <p class="invoice-subtitle">Plan Integral de Evolución Digital para Federación de Coaching & Academia</p>
+            </div>
+        </div>
+        
+        <!-- CUERPO DE LA COTIZACIÓN -->
+        <div class="invoice-body">
+            <!-- SECCIÓN DE INFORMACIÓN PRINCIPAL -->
+            <div class="main-info-section animate-section">
+                <div class="info-block">
+                    <div class="info-title">
+                        <i class="fas fa-user-tie"></i> CLIENTE
+                    </div>
+                    <div class="info-detail">
+                        <strong>Dirigido a:</strong> Junta Directiva
+                    </div>
+                    <div class="info-detail">
+                        <strong>Organización:</strong> Federación de Coaching & Academia
+                    </div>
+                    <div class="info-detail">
+                        <strong>Consultoría:</strong> Ingenieros de Sistemas Venezuela (IDSV)
+                    </div>
+                    <div class="info-detail">
+                        <strong>RIF:</strong> J-274030070-0
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-title">
+                        <i class="far fa-calendar-alt"></i> DETALLES
+                    </div>
+                    <div class="info-detail">
+                        <strong>Fecha:</strong> <span id="current-date"></span>
+                    </div>
+                    <div class="info-detail">
+                        <strong>Vigencia:</strong> <span class="info-highlight">7 días hábiles</span>
+                    </div>
+                    <div class="info-detail">
+                        <strong>Referencia:</strong> #COACH-COT-2025-001
+                    </div>
+                    <div class="info-detail">
+                        <strong>Moneda:</strong> Dólares Americanos (USD)
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-title">
+                        <i class="fas fa-bullseye"></i> OBJETIVO
+                    </div>
+                    <div class="info-detail">
+                        Migración de 12-15 secciones críticas por plataforma con implementación de sistema de autogestión completo.
+                    </div>
+                    <div class="info-detail">
+                        <span class="info-highlight">Transformación total del ecosistema digital</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE PROPÓSITO -->
+            <div class="purpose-section animate-section">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-bar"></i> PROPÓSITO DE ESTA COTIZACIÓN
+                </h2>
+                
+                <p class="purpose-content">
+                    Esta propuesta tiene como objetivo <strong>transparentar el valor real del desarrollo web profesional</strong> 
+                    y demostrar cómo nuestra <strong>Alianza Estratégica 2x1</strong> representa un ahorro significativo para su institución.
+                </p>
+                
+                <h3 class="subtitle">
+                    <i class="fas fa-calculator"></i> ANÁLISIS DE VALOR REAL POR SECCIÓN
+                </h3>
+                
+                <div class="value-calc">
+                    <strong>DESGLOSE TÉCNICO Y ECONÓMICO</strong><br>
+                    En el mercado actual, el desarrollo profesional de <strong>cada sección/URL estratégica</strong> tiene un 
+                    <strong>valor comercial real entre $30-40 USD</strong>, dependiendo de la complejidad y funcionalidades requeridas.<br><br>
+                    
+                    <strong>CÁLCULO BASE:</strong><br>
+                    <strong>12-15 secciones críticas × $35 USD (promedio) = $420-525 USD por plataforma</strong>
+                </div>
+                
+                <div style="margin-top: var(--espacio-lg);">
+                    <strong style="color: var(--azul-oscuro);">VALORACIÓN JUSTA INCLUYE:</strong>
+                    <ul class="value-list">
+                        <li><i class="fas fa-code"></i> Desarrollo técnico profesional</li>
+                        <li><i class="fas fa-search"></i> Optimización SEO avanzada</li>
+                        <li><i class="fas fa-paint-brush"></i> Diseño UX/UI especializado</li>
+                        <li><i class="fas fa-cogs"></i> Integración de funcionalidades</li>
+                        <li><i class="fas fa-check-circle"></i> Pruebas y garantía de calidad</li>
+                        <li><i class="fas fa-file-alt"></i> Documentación técnica completa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DESGLOSE DE SECCIONES -->
+            <div class="breakdown-section animate-section">
+                <h2 class="section-title">
+                    <i class="fas fa-dollar-sign"></i> DESGLOSE DETALLADO POR PLATAFORMA
+                </h2>
+                
+                <p style="text-align: center; color: var(--gris-texto); margin-bottom: var(--espacio-lg); font-size: var(--tamano-base);">
+                    <strong>INVERSIÓN POR SECCIÓN/URL - De $35-40 a $21-27 por sección</strong>
+                </p>
+                
+                <div class="breakdown-grid">
+                    <div class="section-column">
+                        <div class="section-item">
+                            <span class="section-name">1. Home Institucional</span>
+                            <div class="price-container">
+                                <span class="price-real">$40 USD</span>
+                                <span class="price-offer">$27 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">2. Código de Ética</span>
+                            <div class="price-container">
+                                <span class="price-real">$35 USD</span>
+                                <span class="price-offer">$23 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">3. Alianzas Estratégicas</span>
+                            <div class="price-container">
+                                <span class="price-real">$35 USD</span>
+                                <span class="price-offer">$23 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">4. Valores/Principios</span>
+                            <div class="price-container">
+                                <span class="price-real">$30 USD</span>
+                                <span class="price-offer">$20 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">5-9. 5 Comunidades</span>
+                            <div class="price-container">
+                                <span class="price-real">$175 USD</span>
+                                <span class="price-offer">$116 USD ($23 c/u)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-column">
+                        <div class="section-item">
+                            <span class="section-name">10. Equipo Ejecutivo</span>
+                            <div class="price-container">
+                                <span class="price-real">$35 USD</span>
+                                <span class="price-offer">$23 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">11. Directorio Coaches</span>
+                            <div class="price-container">
+                                <span class="price-real">$40 USD</span>
+                                <span class="price-offer">$27 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">12. Manuales Coach</span>
+                            <div class="price-container">
+                                <span class="price-real">$40 USD</span>
+                                <span class="price-offer">$27 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">13. Repositorio</span>
+                            <div class="price-container">
+                                <span class="price-real">$40 USD</span>
+                                <span class="price-offer">$27 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">14. Centro Contacto</span>
+                            <div class="price-container">
+                                <span class="price-real">$45 USD</span>
+                                <span class="price-offer">$30 USD</span>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <span class="section-name">15. Sistema Avales</span>
+                            <div class="price-container">
+                                <span class="price-real">$50 USD</span>
+                                <span class="price-offer">$33 USD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="total-box">
+                    <div class="total-row">
+                        <span class="total-label">TOTAL 15 URLs:</span>
+                        <span class="total-real">$525 USD</span>
+                        <span class="total-offer">$325 USD</span>
+                    </div>
+                    <div style="margin-top: var(--espacio-sm); color: var(--gris-texto); font-size: var(--tamano-sm);">
+                        <strong>Nota:</strong> Esto representa pasar de pagar <strong>$35-40 por sección</strong> a 
+                        <strong style="color: var(--rojo-profesional);">$21-27 por sección</strong> en la Alianza 2x1.
+                    </div>
+                </div>
+            </div>
+
+            <!-- MÓDULOS PRINCIPALES -->
+            <div class="modules-section animate-section">
+                <h2 class="section-title">
+                    <i class="fas fa-project-diagram"></i> ESTRUCTURA DE MÓDULOS PRINCIPALES
+                </h2>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="module-title">Estructura Institucional</h3>
+                        <p class="module-description">
+                            Home profesional, Código de Ética, Alianzas Estratégicas y Valores/Principios corporativos
+                        </p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="module-title">Ecosistema de Comunidades</h3>
+                        <p class="module-description">
+                            Segmentación técnica de las 5 comunidades (1 al 5) con accesos independientes y gestión granular
+                        </p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="module-title">Gestión de Talento</h3>
+                        <p class="module-description">
+                            Páginas de Equipo ejecutivo y Directorio completo de Coaches certificados
+                        </p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="module-title">Recursos Técnicos</h3>
+                        <p class="module-description">
+                            Manuales de Coach especializados y Repositorio de formación continua
+                        </p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="module-title">Centro de Contacto</h3>
+                        <p class="module-description">
+                            Sistema multicanal integrado con routing automático y gestión de tickets
+                        </p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="module-title">Sistema de Avales Digital</h3>
+                        <p class="module-description">
+                            Plataforma completa para emisión, validación y revocación de certificaciones
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASES DEL PROYECTO -->
+            <div class="phases-section animate-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-alt"></i> FASES DEL PROYECTO
+                </h2>
+                
+                <div class="phases-container">
+                    <!-- FASE 1 -->
+                    <div class="phase-card">
+                        <div class="phase-header fase-1">
+                            <div class="phase-badge">FASE 1</div>
+                            <h3 class="phase-title">Auditoría y Arquitectura de Información</h3>
+                            <div class="phase-duration">4 Días</div>
+                        </div>
+                        
+                        <div class="phase-details">
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-sitemap"></i>
+                                    <span>Mapeo de 15 secciones críticas (URLs) para migración</span>
+                                </div>
+                                <div class="activity-hours">10h</div>
+                                <div class="activity-value">$40 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-users"></i>
+                                    <span>Diseño de flujo de usuario (UX) para Comunidades 1-5</span>
+                                </div>
+                                <div class="activity-hours">10h</div>
+                                <div class="activity-value">$40 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-database"></i>
+                                    <span>Estructura técnica de bases de datos de miembros</span>
+                                </div>
+                                <div class="activity-hours">10h</div>
+                                <div class="activity-value">$40 USD</div>
+                            </div>
+                            
+                            <div class="phase-summary">
+                                <div class="summary-item">
+                                    <strong>Subtotal Fase 1:</strong>
+                                    <span>30 Horas</span>
+                                    <span class="summary-value">$120 USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2 -->
+                    <div class="phase-card">
+                        <div class="phase-header fase-2">
+                            <div class="phase-badge">FASE 2</div>
+                            <h3 class="phase-title">Desarrollo y Contenidos</h3>
+                            <div class="phase-duration">8 Días</div>
+                        </div>
+                        
+                        <div class="phase-details">
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-file-import"></i>
+                                    <span>Migración de textos y multimedia institucional</span>
+                                </div>
+                                <div class="activity-hours">30h</div>
+                                <div class="activity-value">$100 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span>Implementación de Código de Ética y Valores dinámicos</span>
+                                </div>
+                                <div class="activity-hours">15h</div>
+                                <div class="activity-value">$50 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Configuración de sellos de avales con seguridad digital</span>
+                                </div>
+                                <div class="activity-hours">20h</div>
+                                <div class="activity-value">$75 USD</div>
+                            </div>
+                            
+                            <div class="phase-summary">
+                                <div class="summary-item">
+                                    <strong>Subtotal Fase 2:</strong>
+                                    <span>65 Horas</span>
+                                    <span class="summary-value">$225 USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3 -->
+                    <div class="phase-card">
+                        <div class="phase-header fase-3">
+                            <div class="phase-badge">FASE 3</div>
+                            <h3 class="phase-title">Motor de Automatización</h3>
+                            <div class="phase-duration">8 Días</div>
+                        </div>
+                        
+                        <div class="phase-details">
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-user-cog"></i>
+                                    <span>Desarrollo de sistema de autogestión de perfiles</span>
+                                </div>
+                                <div class="activity-hours">20h</div>
+                                <div class="activity-value">$70 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-headset"></i>
+                                    <span>Integración de sistema de soporte y tickets automático</span>
+                                </div>
+                                <div class="activity-hours">15h</div>
+                                <div class="activity-value">$50 USD</div>
+                            </div>
+                            <div class="activity-row">
+                                <div class="activity-name">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Configuración de pasarela de pago / donaciones</span>
+                                </div>
+                                <div class="activity-hours">15h</div>
+                                <div class="activity-value">$40 USD</div>
+                            </div>
+                            
+                            <div class="phase-summary">
+                                <div class="summary-item">
+                                    <strong>Subtotal Fase 3:</strong>
+                                    <span>50 Horas</span>
+                                    <span class="summary-value">$160 USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESUMEN DE INVERSIÓN -->
+            <div class="investment-summary animate-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calculator"></i> RESUMEN DE INVERSIÓN ESTRUCTURADA
+                </h2>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <div class="summary-card-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>VALOR REAL POR PLATAFORMA</h4>
+                        </div>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span>Fase 1: Arquitectura</span>
+                                <span class="cost-value">$120 USD</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Fase 2: Desarrollo</span>
+                                <span class="cost-value">$225 USD</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Fase 3: Automatización</span>
+                                <span class="cost-value">$160 USD</span>
+                            </div>
+                            <div class="cost-total">
+                                <strong>TOTAL INVERSIÓN</strong>
+                                <strong class="cost-value">$505 USD</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-card-header">
+                            <i class="fas fa-building"></i>
+                            <h4>VALOR MERCADO 2 PLATAFORMAS</h4>
+                        </div>
+                        <div style="text-align: center; padding: var(--espacio-lg);">
+                            <div style="font-size: var(--tamano-4xl); font-weight: 800; color: var(--gris-medio); 
+                                     text-decoration: line-through; margin-bottom: var(--espacio-md);">
+                                $1,010 USD
+                            </div>
+                            <div style="color: var(--gris-texto); font-size: var(--tamano-sm);">
+                                ($505 USD × 2 plataformas sin descuento)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card highlight">
+                        <div class="summary-card-header">
+                            <i class="fas fa-handshake"></i>
+                            <h4>OFERTA ALIANZA ESTRATÉGICA</h4>
+                        </div>
+                        <div style="text-align: center; padding: var(--espacio-lg);">
+                            <div class="membership-badge">
+                                MEMBRESÍA CORPORATIVA 2x1
+                            </div>
+                            <p style="color: var(--gris-texto); margin: var(--espacio-md) 0;">
+                                Transformación total de Federación + Academia por precio único
+                            </p>
+                            
+                            <div class="price-comparison">
+                                <div class="regular-price">
+                                    <span>Precio Regular:</span>
+                                    <span class="price-value">$1,010 USD</span>
+                                </div>
+                                <div class="special-price">
+                                    <span>Precio Alianza:</span>
+                                    <span class="price-value">$650 USD</span>
+                                </div>
+                                <div style="font-size: var(--tamano-xs); color: var(--gris-texto); margin-top: var(--espacio-sm);">
+                                    ($325 USD por cada plataforma totalmente terminada)
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: var(--espacio-lg); color: var(--gris-texto); font-size: var(--tamano-sm);">
+                                <i class="fas fa-clock"></i>
+                                <span>Tiempo total: <strong>20 días</strong> (15 días por plataforma)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIRMA IDSV -->
+            <div class="signature-section animate-section">
+                <h3 style="color: var(--azul-oscuro); margin-bottom: var(--espacio-sm);">
+                    <i class="fas fa-signature"></i> FIRMA Y ACEPTACIÓN
+                </h3>
+                <div style="height: 2px; background: linear-gradient(90deg, var(--azul-profesional), var(--azul-claro)); margin: var(--espacio-lg) 0;"></div>
+                <div style="font-size: var(--tamano-lg); color: var(--azul-profesional); font-weight: 600; margin-bottom: var(--espacio-sm);">
+                    Ingenieros de Sistemas Venezuela (IDSV)
+                </div>
+                <div style="color: var(--gris-texto); margin-bottom: var(--espacio-md);">
+                    RIF: J-274030070-0 | Tlf: +58 412-3563070<br>
+                    Email: ingenierosdesistemavenezuela@gmail.com
+                </div>
+                <img src="https://federaciondecoaching.com/wp-content/uploads/2025/04/IDSV-LOGO.png" 
+                     alt="Logo IDSV - Ingenieros de Sistemas Venezuela" 
+                     class="signature-logo">
+                <div style="font-size: var(--tamano-sm); color: var(--gris-texto); margin-top: var(--espacio-sm);">
+                    Fecha: <span id="full-date"></span>
+                </div>
+            </div>
+
+            <!-- BOTONES DE ACCIÓN -->
+            <div class="action-buttons">
+                <button class="btn btn-print" onclick="printInvoice()">
+                    <i class="fas fa-print"></i> IMPRIMIR COTIZACIÓN
+                </button>
+                <button class="btn btn-download" onclick="downloadPDF()">
+                    <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+                </button>
+                <button class="btn btn-contact" onclick="contactAdvisor()">
+                    <i class="fas fa-comments"></i> HABLAR CON ASESOR
+                </button>
+            </div>
+        </div>
+        
+        <!-- PIE DE PÁGINA -->
+        <div class="invoice-footer">
+            <p style="font-weight: 500; margin-bottom: var(--espacio-sm);">
+                IDSV - INGENIEROS DE SISTEMAS VENEZUELA | RIF: J-274030070-0
+            </p>
+            <p style="font-size: var(--tamano-xs); opacity: 0.8; margin-bottom: var(--espacio-sm);">
+                Esta cotización es válida como documento técnico-profesional según estándares internacionales de consultoría TI.
+            </p>
+            <p style="font-size: var(--tamano-xs); opacity: 0.8;">
+                Página 1 de 1 | Emisión: <span id="emission-date"></span> | Validez: 7 días hábiles
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // FUNCIÓN PARA FORMATEAR FECHA
+        function formatDate(date) {
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                weekday: 'long'
+            };
+            return date.toLocaleDateString('es-ES', options);
+        }
+        
+        // ESTABLECER FECHA ACTUAL
+        const currentDate = new Date();
+        document.getElementById('current-date').textContent = formatDate(currentDate);
+        
+        // FECHA COMPLETA PARA FIRMA Y EMISIÓN
+        const fullDateOptions = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        const fullDateStr = currentDate.toLocaleDateString('es-ES', fullDateOptions);
+        document.getElementById('full-date').textContent = fullDateStr;
+        document.getElementById('emission-date').textContent = fullDateStr;
+
+        // FUNCIÓN PARA IMPRIMIR
+        function printInvoice() {
+            const printBtn = document.querySelector('.btn-print');
+            printBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PREPARANDO...';
+            printBtn.disabled = true;
+            
+            setTimeout(() => {
+                window.print();
+                
+                setTimeout(() => {
+                    printBtn.innerHTML = '<i class="fas fa-print"></i> IMPRIMIR COTIZACIÓN';
+                    printBtn.disabled = false;
+                }, 1000);
+            }, 500);
+        }
+
+        // FUNCIÓN PARA DESCARGAR PDF
+        function downloadPDF() {
+            const element = document.getElementById('invoice-content');
+            const downloadBtn = document.querySelector('.btn-download');
+            
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> GENERANDO PDF...';
+            downloadBtn.disabled = true;
+            
+            const actionButtons = document.querySelector('.action-buttons');
+            const originalDisplay = actionButtons.style.display;
+            actionButtons.style.display = 'none';
+            
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: `COTIZACION-DIGITAL-2x1-${currentDate.getFullYear()}-${(currentDate.getMonth()+1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}.pdf`,
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2,
+                    scrollY: 0,
+                    windowHeight: element.scrollHeight + 50,
+                    useCORS: true,
+                    backgroundColor: '#FFFFFF'
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                actionButtons.style.display = originalDisplay;
+                downloadBtn.innerHTML = '<i class="fas fa-file-pdf"></i> DESCARGAR PDF';
+                downloadBtn.disabled = false;
+                showNotification('PDF generado exitosamente', 'success');
+            }).catch((error) => {
+                console.error('Error al generar PDF:', error);
+                showNotification('Error al generar PDF', 'error');
+                actionButtons.style.display = originalDisplay;
+                downloadBtn.innerHTML = '<i class="fas fa-file-pdf"></i> DESCARGAR PDF';
+                downloadBtn.disabled = false;
+            });
+        }
+
+        // FUNCIÓN PARA CONTACTAR ASESOR
+        function contactAdvisor() {
+            const phoneNumber = '+584123563070';
+            const message = encodeURIComponent('Hola, me interesa la cotización de Transformación Digital 2x1 para la Federación de Coaching. ¿Podrían proporcionarme más información?');
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // FUNCIÓN PARA MOSTRAR NOTIFICACIONES
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, var(--azul-profesional), var(--azul-electrico))' : 'linear-gradient(135deg, var(--rojo-profesional), var(--rojo-vibrante))'};
+                color: white;
+                border-radius: 10px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // AÑADIR ESTILOS DE ANIMACIÓN
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            @keyframes fadeInSections {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ANIMAR SECCIONES AL CARGAR
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.animate-section');
+            
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.animation = `fadeInSections 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+                    section.style.opacity = '1';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

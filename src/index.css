@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  /* Escala global más compacta para móviles (≈20% menos) */
+  @media (max-width: 640px) {
+    html {
+      font-size: 13px; /* por defecto ~16px → reducimos tipografía global en móvil */
+    }
+
+    body {
+      line-height: 1.35;
+    }
+  }
+
   * {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -55,3 +66,8 @@
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
+
+/* Componente recreado desde cero con lógica más simple.
+   Ahora usa un solo componente que cambia su layout según el breakpoint:
+   - Móvil: usa "flex sm:hidden" (2 columnas)
+   - Desktop: usa "hidden sm:flex" (4 columnas) */

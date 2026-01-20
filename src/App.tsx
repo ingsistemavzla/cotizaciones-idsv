@@ -8,7 +8,7 @@ import { QuotationPage } from './pages/Quotation'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cotizaciones-idsv">
       <Routes>
         <Route path="/landing" element={<Landing />} />
         <Route path="/invoice" element={<InvoicePage />} />

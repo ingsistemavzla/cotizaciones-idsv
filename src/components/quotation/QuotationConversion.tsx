@@ -50,7 +50,7 @@ export function QuotationConversion() {
       <div className="absolute inset-0 bg-gradient-to-bl from-red-700/50 via-transparent to-red-900/50" />
       
       {/* Contenido */}
-      <div className="relative z-10 p-4 sm:p-6 md:p-8 lg:p-12 text-white overflow-x-hidden">
+      <div className="relative z-10 p-2 sm:p-4 md:p-6 lg:p-8 xl:p-12 text-white overflow-x-hidden w-full">
         {/* Título principal con badge */}
         <div className="text-center mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 sm:mb-4 leading-tight tracking-wide uppercase break-words">
@@ -76,7 +76,7 @@ export function QuotationConversion() {
         </div>
 
         {/* Contenido principal */}
-        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 w-full px-2">
+        <div className="w-full space-y-4 sm:space-y-6">
           <div className="bg-black/40 backdrop-blur-md rounded-xl p-4 sm:p-6 border-2 border-white/50 shadow-2xl">
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center mb-4 sm:mb-6 text-white font-medium break-words">
               Una plataforma profesional con{' '}

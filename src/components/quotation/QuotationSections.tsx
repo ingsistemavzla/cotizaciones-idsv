@@ -12,7 +12,7 @@ export function QuotationSections({
   totalAlliancePrice,
 }: QuotationSectionsProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 overflow-x-hidden">
+    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
       <div className="mb-6 sm:mb-8">
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-2 break-words">
           DESGLOSE DETALLADO POR PLATAFORMA

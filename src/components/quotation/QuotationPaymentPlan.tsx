@@ -70,7 +70,7 @@ export function QuotationPaymentPlan() {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
 
   return (
-    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-primary-800 shadow-2xl relative overflow-hidden">
+    <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-primary-800 sm:shadow-2xl relative overflow-hidden w-full">
       {/* Badge de tiempo limitado con contador */}
       <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-accent-600 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-black uppercase tracking-wide transform rotate-12 shadow-lg">
         <Clock className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1 sm:mr-2" />

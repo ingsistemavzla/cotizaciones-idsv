@@ -7,7 +7,7 @@ interface QuotationObjectiveProps {
 
 export function QuotationObjective({ objective, purpose }: QuotationObjectiveProps) {
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 shadow-lg overflow-x-hidden">
+    <div className="bg-white sm:rounded-2xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 sm:shadow-lg overflow-x-hidden w-full">
       {/* Propósito */}
       <div className="mb-10">
         <h2 className="text-2xl md:text-3xl font-black text-primary-800 mb-4 border-b-2 border-primary-600 pb-2 flex items-center gap-2">

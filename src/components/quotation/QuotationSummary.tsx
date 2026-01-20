@@ -23,7 +23,7 @@ export function QuotationSummary({ summary }: QuotationSummaryProps) {
   const totalOffer = phase1Offer + phase2Offer + phase3Offer
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 border-2 border-neutral-200 overflow-x-hidden">
+    <div className="bg-white sm:rounded-2xl sm:shadow-xl p-2 sm:p-4 md:p-6 lg:p-8 border-2 border-neutral-200 overflow-x-hidden w-full">
       <div className="text-center mb-6 sm:mb-8">
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-primary-800 mb-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 break-words">
           <Calculator className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 flex-shrink-0" />
@@ -33,7 +33,7 @@ export function QuotationSummary({ summary }: QuotationSummaryProps) {
       </div>
 
       {/* Todo vertical - uno encima del otro */}
-      <div className="space-y-6 max-w-3xl mx-auto">
+      <div className="space-y-4 sm:space-y-6 w-full md:max-w-3xl md:mx-auto">
         {/* Valor Real vs Oferta por Plataforma */}
         <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 border-2 border-primary-200">
           <h3 className="text-xl font-black text-primary-800 mb-4">

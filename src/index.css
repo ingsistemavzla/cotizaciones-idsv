@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
   body {
     @apply bg-gray-50 text-gray-900 antialiased;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

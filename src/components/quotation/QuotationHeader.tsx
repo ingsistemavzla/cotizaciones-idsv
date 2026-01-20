@@ -18,8 +18,8 @@ interface QuotationHeaderProps {
 
 export function QuotationHeader({ client, details, objective }: QuotationHeaderProps) {
   return (
-    <div className="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 text-white py-8 px-6 rounded-t-2xl relative overflow-hidden">
-      <div className="container mx-auto max-w-6xl relative z-10">
+    <div className="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 text-white py-4 sm:py-6 md:py-8 px-2 sm:px-4 md:px-6 sm:rounded-t-2xl relative overflow-hidden">
+      <div className="w-full md:max-w-6xl md:mx-auto relative z-10">
         {/* Logo grande primero */}
         <div className="flex justify-center mb-6">
           <img
@@ -39,10 +39,10 @@ export function QuotationHeader({ client, details, objective }: QuotationHeaderP
 
         {/* Título de la cotización */}
         <div className="text-center mb-6">
-          <h1 className="text-3xl md:text-4xl font-black mb-3 uppercase tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 uppercase tracking-tight break-words px-2">
             COTIZACIÓN OFICIAL - TRANSFORMACIÓN DIGITAL 2x1
           </h1>
-          <p className="text-lg opacity-90 font-light">
+          <p className="text-sm sm:text-base md:text-lg opacity-90 font-light break-words px-2">
             Plan Integral de Evolución Digital para Federación de Coaching & Academia
           </p>
         </div>

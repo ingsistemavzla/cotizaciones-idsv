@@ -78,20 +78,23 @@ export function QuotationObjective({ objective, purpose }: QuotationObjectivePro
             dependiendo de la complejidad y funcionalidades requeridas.
           </p>
           
-          <div className="bg-gradient-to-br from-primary-50 to-red-50 rounded-lg p-6 border-2 border-primary-400">
-            <p className="font-bold text-primary-800 mb-4 text-lg">CÁLCULO BASE:</p>
+          <p className="text-red-700 font-black uppercase tracking-wide mb-2">
+            Cotización Real
+          </p>
+          <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6 border-2 border-red-300">
+            <p className="font-bold text-red-800 mb-4 text-lg">CÁLCULO BASE:</p>
             
             <div className="space-y-4">
               {/* Rango de secciones */}
               <div className="flex flex-col md:flex-row md:items-center gap-3">
                 <div className="flex-1">
                   <p className="text-sm text-neutral-600 mb-1">Rango de secciones críticas:</p>
-                  <p className="text-xl font-bold text-primary-700">12 - 15 secciones</p>
+                  <p className="text-xl font-bold text-red-700">12 - 15 secciones</p>
                 </div>
-                <div className="text-2xl text-primary-400">×</div>
+                <div className="text-2xl text-red-400">×</div>
                 <div className="flex-1">
                   <p className="text-sm text-neutral-600 mb-1">Precio promedio por sección:</p>
-                  <p className="text-xl font-bold text-primary-700">$35 USD</p>
+                  <p className="text-xl font-bold text-red-700">$35 USD</p>
                 </div>
               </div>
 
@@ -102,54 +105,72 @@ export function QuotationObjective({ objective, purpose }: QuotationObjectivePro
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 border border-primary-200">
                   <p className="text-sm text-neutral-600 mb-1">Mínimo (12 secciones):</p>
-                  <p className="text-2xl font-black text-primary-700">$420 USD</p>
+                  <p className="text-2xl font-black text-red-700">$420 USD</p>
                   <p className="text-xs text-neutral-500 mt-1">12 × $35 = $420</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-primary-200">
                   <p className="text-sm text-neutral-600 mb-1">Máximo (15 secciones):</p>
-                  <p className="text-2xl font-black text-primary-700">$525 USD</p>
+                  <p className="text-2xl font-black text-red-700">$525 USD</p>
                   <p className="text-xs text-neutral-500 mt-1">15 × $35 = $525</p>
                 </div>
               </div>
 
               {/* Total destacado */}
-              <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg p-4 text-center mt-4">
-                <p className="text-sm opacity-90 mb-1">Valor por plataforma:</p>
+              <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg p-4 text-center mt-4">
+                <p className="text-sm opacity-90 mb-1">Valor por plataforma (real):</p>
                 <p className="text-3xl font-black">$420 - $525 USD</p>
               </div>
 
-              {/* Ajuste de precios por promoción 2x1 */}
-              <div className="mt-4 sm:mt-6 bg-gradient-to-br from-primary-50 to-white rounded-lg p-4 sm:p-5 border-2 border-primary-200">
-                <p className="text-sm sm:text-base font-bold text-primary-800 mb-2">
-                  AJUSTE DE PRECIOS POR PROMOCIÓN ALIANZA 2x1
-                </p>
-                <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mb-3">
-                  Para esta promoción, las tarifas de desarrollo se ajustan drásticamente entre{' '}
-                  <strong className="text-primary-700">$21 y $27 USD por cada URL</strong>, con un
-                  promedio estimado de <strong className="text-primary-700">$25 USD por sección</strong>.
-                  En ese rango, 12-15 secciones equivalen aproximadamente a{' '}
-                  <strong className="text-primary-700">$300 - $375 USD</strong> por plataforma.
-                </p>
-                <div className="grid sm:grid-cols-3 gap-3">
-                  <div className="bg-white rounded-lg p-3 border border-primary-200">
-                    <p className="text-xs text-neutral-600 mb-1">Mínimo (12 × $21):</p>
-                    <p className="text-lg font-black text-primary-700">$252 USD</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-3 border border-primary-200">
-                    <p className="text-xs text-neutral-600 mb-1">Promedio ($25):</p>
-                    <p className="text-lg font-black text-primary-700">$300 - $375 USD</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-3 border border-primary-200">
-                    <p className="text-xs text-neutral-600 mb-1">Máximo (15 × $27):</p>
-                    <p className="text-lg font-black text-primary-700">$405 USD</p>
-                  </div>
+            </div>
+          </div>
+
+          {/* CÁLCULO BASE (VALOR DE OFERTA) */}
+          <p className="text-blue-700 font-black uppercase tracking-wide mt-4">
+            Cotización Alianza 2x1
+          </p>
+          <div className="mt-4 sm:mt-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border-2 border-blue-300 shadow-md">
+            <p className="font-bold text-primary-800 mb-4 text-lg">CÁLCULO BASE (VALOR DE OFERTA):</p>
+            <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mb-4">
+              Para esta promoción, las tarifas de desarrollo se ajustan entre{' '}
+              <strong className="text-primary-700">$21 y $27 USD por cada URL</strong>, con un
+              promedio estimado de <strong className="text-primary-700">$25 USD por sección</strong>.
+            </p>
+            <div className="space-y-4">
+              <div className="flex flex-col md:flex-row md:items-center gap-3">
+                <div className="flex-1">
+                  <p className="text-sm text-neutral-600 mb-1">Rango de secciones críticas:</p>
+                  <p className="text-xl font-bold text-primary-700">12 - 15 secciones</p>
                 </div>
-                <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mt-3">
-                  Hoy no pagarás ese monto, porque nuestra promoción incluye el desarrollo de{' '}
-                  <strong className="text-primary-700">dos plataformas simultáneas por $325 USD cada una</strong>.
-                  A continuación te explicamos los detalles.
-                </p>
+                <div className="text-2xl text-primary-400">×</div>
+                <div className="flex-1">
+                  <p className="text-sm text-neutral-600 mb-1">Precio promedio por sección (oferta):</p>
+                  <p className="text-xl font-bold text-primary-700">$25 USD</p>
+                </div>
               </div>
+              <div className="h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent my-4" />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white rounded-lg p-4 border border-primary-200">
+                  <p className="text-sm text-neutral-600 mb-1">Mínimo (12 secciones):</p>
+                  <p className="text-2xl font-black text-primary-700">$300 USD</p>
+                  <p className="text-xs text-neutral-500 mt-1">12 × $25 = $300</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 border border-primary-200">
+                  <p className="text-sm text-neutral-600 mb-1">Máximo (15 secciones):</p>
+                  <p className="text-2xl font-black text-primary-700">$375 USD</p>
+                  <p className="text-xs text-neutral-500 mt-1">15 × $25 = $375</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg p-4 text-center mt-4">
+                <p className="text-sm opacity-90 mb-1">Valor por plataforma (oferta):</p>
+                <p className="text-3xl font-black">$300 - $375 USD</p>
+              </div>
+              <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mt-3">
+                En ese rango, 12-15 secciones equivalen aproximadamente a{' '}
+                <strong className="text-primary-700">$300 - $375 USD</strong> por plataforma, pero
+                hoy no pagarás ese monto porque la promoción incluye el desarrollo de{' '}
+                <strong className="text-primary-700">dos plataformas simultáneas por $325 USD cada una</strong>.
+                A continuación te explicamos los detalles.
+              </p>
             </div>
           </div>
         </div>

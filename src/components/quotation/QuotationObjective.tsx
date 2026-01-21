@@ -117,40 +117,40 @@ export function QuotationObjective({ objective, purpose }: QuotationObjectivePro
                 <p className="text-sm opacity-90 mb-1">Valor por plataforma:</p>
                 <p className="text-3xl font-black">$420 - $525 USD</p>
               </div>
-            </div>
-          </div>
 
-          {/* Ajuste de precios por promoción 2x1 */}
-          <div className="mt-4 sm:mt-6 bg-gradient-to-br from-primary-50 to-white rounded-lg p-4 sm:p-5 border-2 border-primary-200">
-            <p className="text-sm sm:text-base font-bold text-primary-800 mb-2">
-              AJUSTE DE PRECIOS POR PROMOCIÓN ALIANZA 2x1
-            </p>
-            <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mb-3">
-              Para esta promoción, las tarifas de desarrollo se ajustan drásticamente entre{' '}
-              <strong className="text-primary-700">$21 y $27 USD por cada URL</strong>, con un
-              promedio estimado de <strong className="text-primary-700">$25 USD por sección</strong>.
-              En ese rango, 12-15 secciones equivalen aproximadamente a{' '}
-              <strong className="text-primary-700">$300 - $375 USD</strong> por plataforma.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-3">
-              <div className="bg-white rounded-lg p-3 border border-primary-200">
-                <p className="text-xs text-neutral-600 mb-1">Mínimo (12 × $21):</p>
-                <p className="text-lg font-black text-primary-700">$252 USD</p>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-primary-200">
-                <p className="text-xs text-neutral-600 mb-1">Promedio ($25):</p>
-                <p className="text-lg font-black text-primary-700">$300 - $375 USD</p>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-primary-200">
-                <p className="text-xs text-neutral-600 mb-1">Máximo (15 × $27):</p>
-                <p className="text-lg font-black text-primary-700">$405 USD</p>
+              {/* Ajuste de precios por promoción 2x1 */}
+              <div className="mt-4 sm:mt-6 bg-gradient-to-br from-primary-50 to-white rounded-lg p-4 sm:p-5 border-2 border-primary-200">
+                <p className="text-sm sm:text-base font-bold text-primary-800 mb-2">
+                  AJUSTE DE PRECIOS POR PROMOCIÓN ALIANZA 2x1
+                </p>
+                <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mb-3">
+                  Para esta promoción, las tarifas de desarrollo se ajustan drásticamente entre{' '}
+                  <strong className="text-primary-700">$21 y $27 USD por cada URL</strong>, con un
+                  promedio estimado de <strong className="text-primary-700">$25 USD por sección</strong>.
+                  En ese rango, 12-15 secciones equivalen aproximadamente a{' '}
+                  <strong className="text-primary-700">$300 - $375 USD</strong> por plataforma.
+                </p>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  <div className="bg-white rounded-lg p-3 border border-primary-200">
+                    <p className="text-xs text-neutral-600 mb-1">Mínimo (12 × $21):</p>
+                    <p className="text-lg font-black text-primary-700">$252 USD</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 border border-primary-200">
+                    <p className="text-xs text-neutral-600 mb-1">Promedio ($25):</p>
+                    <p className="text-lg font-black text-primary-700">$300 - $375 USD</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 border border-primary-200">
+                    <p className="text-xs text-neutral-600 mb-1">Máximo (15 × $27):</p>
+                    <p className="text-lg font-black text-primary-700">$405 USD</p>
+                  </div>
+                </div>
+                <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mt-3">
+                  Hoy no pagarás ese monto, porque nuestra promoción incluye el desarrollo de{' '}
+                  <strong className="text-primary-700">dos plataformas simultáneas por $325 USD cada una</strong>.
+                  A continuación te explicamos los detalles.
+                </p>
               </div>
             </div>
-            <p className="text-[0.8rem] sm:text-sm text-neutral-700 leading-relaxed mt-3">
-              Hoy no pagarás ese monto, porque nuestra promoción incluye el desarrollo de{' '}
-              <strong className="text-primary-700">dos plataformas simultáneas por $325 USD cada una</strong>.
-              A continuación te explicamos los detalles.
-            </p>
           </div>
         </div>
 

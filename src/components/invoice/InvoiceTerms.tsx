@@ -22,3 +22,4 @@ export function InvoiceTerms({ terms }: InvoiceTermsProps) {
 
 
 
+

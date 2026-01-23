@@ -22,3 +22,4 @@ export function ReportSection({ title, icon: Icon, children, className = '' }: R
   )
 }
 
+

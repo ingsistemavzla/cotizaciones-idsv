@@ -4,3 +4,4 @@ export function ReportExpenseScopePage() {
   return <ReportExpenseScope />
 }
 
+

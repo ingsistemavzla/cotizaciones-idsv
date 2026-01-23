@@ -53,8 +53,8 @@ function App() {
         <RedirectHandler />
         <Routes>
           <Route path="/" element={<Navigate to="/oferta-web-icmf-acca" replace />} />
-          <Route path="/oferta-web-icmf-acca" element={<QuotationTwoColumnsPage />} />
-          <Route path="/informe-web-2025" element={<ReportExpenseScopePage />} />
+          <Route path="/oferta-web-icmf-acca" element={<ReportExpenseScopePage />} />
+          <Route path="/informe-web-2025" element={<QuotationTwoColumnsPage />} />
           <Route path="*" element={<Navigate to="/oferta-web-icmf-acca" replace />} />
         </Routes>
       </BrowserRouter>

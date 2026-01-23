@@ -40,3 +40,6 @@ export function InvoiceTotals({ totals, currency = 'USD' }: InvoiceTotalsProps) 
   )
 }
 
+
+
+

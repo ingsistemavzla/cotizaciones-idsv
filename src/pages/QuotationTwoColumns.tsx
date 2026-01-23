@@ -1,8 +1,15 @@
 import { QuotationTwoColumns } from '../components/quotation/QuotationTwoColumns'
 import { Quotation as QuotationType } from '../types/quotation'
 import { Layers, Users, BookOpen, Mail, Award } from 'lucide-react'
+import { useMetaTags } from '@/hooks/useMetaTags'
 
 export function QuotationTwoColumnsPage() {
+  // Configurar meta tags para compartir en redes sociales
+  useMetaTags({
+    title: 'Cotización Transformación Digital 2x1 - IDSV',
+    description: 'Plan Integral de Evolución Digital para Federación de Coaching & Academia. Alianza Estratégica 2x1 con ahorro significativo.',
+    image: 'https://federaciondecoaching.com/wp-content/uploads/2025/04/IDSV-LOGO.png',
+  })
   const quotationData: QuotationType = {
     client: {
       organization: 'Federación de Coaching & Academia',

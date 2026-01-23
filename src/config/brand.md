@@ -54,3 +54,6 @@
 
 Todos los componentes deben seguir esta guía para mantener consistencia visual en todos los desarrollos futuros.
 
+
+
+

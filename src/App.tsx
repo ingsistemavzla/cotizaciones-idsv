@@ -16,8 +16,21 @@ function RedirectHandler() {
     
     if (redirectPath) {
       // Clean up the path - replace ~and~ with & and handle the path
-      const cleanPath = redirectPath.replace(/~and~/g, '&')
-      const normalizedPath = cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`
+      let cleanPath = redirectPath.replace(/~and~/g, '&')
+      
+      // Remove leading slash if present (React Router handles it)
+      if (cleanPath.startsWith('/')) {
+        cleanPath = cleanPath.slice(1)
+      }
+      
+      // Remove the basename prefix if it's in the path
+      if (cleanPath.startsWith('cotizaciones-idsv/')) {
+        cleanPath = cleanPath.replace('cotizaciones-idsv/', '')
+      }
+      
+      const normalizedPath = `/${cleanPath}`
+      
+      console.log('RedirectHandler: Redirecting from', location.pathname, 'search:', location.search, 'to', normalizedPath)
       
       // Navigate to the correct route
       navigate(normalizedPath, { replace: true })
@@ -28,6 +41,12 @@ function RedirectHandler() {
 }
 
 function App() {
+  useEffect(() => {
+    // Debug: Log current path
+    console.log('App: Current pathname:', window.location.pathname)
+    console.log('App: Current search:', window.location.search)
+  }, [])
+
   return (
     <>
       <BrowserRouter basename="/cotizaciones-idsv">

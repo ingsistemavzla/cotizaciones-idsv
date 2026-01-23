@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { ReportHeader } from './ReportHeader'
 import { ReportInfoSection } from './ReportInfoSection'
 import { ReportSection } from './ReportSection'
@@ -15,6 +15,10 @@ import { useMetaTags } from '@/hooks/useMetaTags'
 
 export function ReportExpenseScope() {
   const reportRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    console.log('ReportExpenseScope: Component rendered')
+  }, [])
 
   // Configurar meta tags para compartir en redes sociales
   useMetaTags({
